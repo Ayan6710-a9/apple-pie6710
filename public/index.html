@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Shopping Site</title>
+        <link rel="shortcut icon" herf="images/logo.png" />
+        <link rel="stylesheet" type="text/css" herf="css/style.css" />
+        <script src="https://kit.fontawesome.com/70a642cd7c.js" 
+        crossorigin="anonymous"></script>
+        <style>
+            body{
+                margin: 0px;
+                padding: 0px;
+                font-family: myriad pro;
+            }
+            *{
+                box-sizing: border-box;
+            }
+            a{
+                text-decoration:none;
+            }
+            ul{
+                list-style: none;
+            }
+            .main{
+                width: 100%;
+                height: 100vh;
+                background-image: url("./Assets/parkor2.jpg");
+                background-repeat: no-repeat;
+                background-size: 65%;
+                background-position: center;
+                position: relative;
+            }
+            .logo{
+                position:absolute;
+                left: 90px;
+                top: 20px;
+            }
+            .logo a{
+                font-family: poppins;
+                font-weight: 700;
+                color:#2f2e41;
+                font-size: 2.2rem;
+                text-shadow: 2px 2px 30px rgb(70,70,70);
+            }
+            .logo span{
+                color:rgb(0, 240, 188);
+            }
+            .logo span:nth-last-child(2){
+                color: rgb(255, 169, 57);
+            }
+            .logo span:nth-last-child(3){
+                color: rgb(34, 255, 133);
+            }
+            .logo span:nth-last-child(4){
+                color: rgb(147, 52, 255);
+            }
+            .logo span:nth-last-child(5){
+                color: rgb(255, 109, 72);
+            }
+            .slide-box{
+                position: fixed;
+                right: 90px;
+                top: 50px;
+                width: 170px;
+                height: 45px;
+                background-color: #FFFFFF;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10% 10% 10% 10%/50% 50% 50% 50%;
+                box-shadow: 2px 2px 30px rgba(167,158,245,0.2);
+                border: 1px solid rgba rgba(167,158,245,0.2);
+                z-index: 1;
+            }
+            .search input{
+                width: 90px;
+                height: 20px;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                color: #1f1f1f;
+                font-size: 1rem;
+                padding: 0px 10px;
+            }
+            .search input::placeholder{
+                color: #1d1d1d;
+                font-weight: 400;
+                font-size: 0.8rem;
+                font-family: poppins;
+            }
+            .search i{
+                margin: 0px auto;
+            }
+            .main-img{
+                position: absolute;
+                left: 15%;
+                top: 50%;
+                transform: translate(-15%, -50%);
+                
+            }
+            .main-img img{
+                height: 400px;
+                width: 60%;
+                box-shadow: 2px 4px 8px rgba(71, 71, 71, 0.411);
+            }
+            @media screen and (min-width: 40%){
+                .main-img img{
+                    height: 300px;
+                    width: 40%;
+                }
+            }
+            .main-text{
+                position: absolute;
+                top: 32.5%;
+                left: 55%;
+                transform: translate(-32.5%, -55%);
+            }
+            .main-text h1,h2{
+                font-family: roboto;
+                font-weight: 700;
+                margin: 0px;
+                line-height: 60px;
+                font-size: 4rem;
+                text-shadow: 2px 2px 10px rgba(0,0,0,0.08);
+                letter-spacing: 3px;
+                color: #3d3d4a;
+                text-transform: uppercase;
+            }
+            .main-btn{
+                width: 150px;
+                height: 40px;
+                background-color: #2f2e41;
+                box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+                display: flex;
+                justify-content: center;
+                align-items:center;
+                border-radius: 20px;
+                margin-top: 20px;
+                color: #FFFFFF;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                font-size: 1rem;
+            }
+            .main-text h1{
+                letter-spacing: 28px;
+            }
+            .main-text font{
+                color: #7a72ff;
+            }
+            .main-btn:hover{
+                color: #fff;
+                background-color: #6e64ff;
+                transition: all ease 0.5s;
+            }
+            .social a{
+                padding: 20px 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .social {
+                position:fixed;
+                left: 30px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 20px;
+                background-color: #FFFFFF;
+                box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+                padding: 5px 0px;
+                z-index: 1;
+            }
+            .social a i{
+                color: rgba(39,39,39,0.8);
+            }
+            .social a:hover .fa-facebook-f{
+                color: #3b5998;
+            }
+            .social a:hover .fa-twitter{
+                color: #00acee;
+            }
+            .social a:hover .fa-instagram{
+                color: #3f729b;
+            }
+            .social a:hover .fa-youtube{
+                color: #ff0000;
+            }
+            .product{
+                width: 65%;
+                background-color: #FFFFFF;
+                box-shadow: 2px 2px 30px rgba(167,158,245,0.2);
+                display: flex;
+                margin: 30px auto;
+                flex-direction: column;
+                padding: 40px 20px;
+                margin-top: 20px;
+                position:relative;
+                
+                border-radius: 10px 10px;
+            }
+            .p-heading{
+                height: 300px;
+                background-image: url("./Assets/shopping2.jpg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: center;
+                margin-top: 20px;
+                text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+                top: 10%;
+                transform: translateY(-10%);
+            }
+            .p-heading h3{
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-align: center;
+                font-size: 4rem;
+                color: #323543;
+            }
+            .p-heading font{
+                color:rgb(0, 225, 255);
+            }
+            
+            .box {
+                float: left;
+                width: 40%;
+                padding: 50px;
+                margin: 20px;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                border-radius: 4px;
+                position: relative;
+                background-color: rgb(19, 220, 255);
+                text-align: center;
+                transform:translateX(20%);
+                }
+            .box:nth-child(4){
+                background-color: aliceblue;
+            }
+                .clearfix::after {
+                content: "";
+                clear: both;
+                display: table;
+                }
+                .box img{
+                width: 60%;
+                height: 60%;
+                justify-content: left;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 10px 10px;
+                box-shadow: 2px 5px 10px rgba(136, 136, 136, 0.8);
+                margin: 10px 10px;
+            }
+            .box .price{
+                color:rgba(0, 0, 0, 0.973);
+                font-family: sans-serif;
+                font-size: 2rem;
+                float: left;
+            }
+            .box .buy-btn{
+                position: absolute;
+                width: 140px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family:Arial, Helvetica, sans-serif;
+                left: 50%;
+                bottom: -20px;
+                transform: translateX(-50%);
+                border-radius: 20px;
+                color: #FFFFFF;
+                background: linear-gradient(120deg,#6b60ec 20%,#a166f4);
+            }
+        </style>
+    </head>    
+    <body>
+        <section class="main">
+            <div class="logo">
+                <a herf="#"><span>S</span>
+                            <span>c</span>
+                            <span>l</span>
+                            <span>o</span>
+                            <span>w</span>
+                            <span>s</span>
+                </a>
+            </div>
+            <div class="slide-box">
+                <div class="search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="search">
+                </div>
+            </div>
+            <div class="main-img">
+                <img src="./Assets/shopping3.jpg" alt="" />
+            </div>
+
+            <div class="main-text">
+                <h1>Su<font>mm</font>er</h1>
+                <h2>Collec<font>tion</font></h2>
+                <a herf="#" class="main-btn">details</a>
+            </div>
+            <div class="social">
+                <p></p><a herf="https://www.facebook.com/">facebook<i class="fab fa-facebook-f"></i></a></p>
+                <a herf="#">Twitter<i class="fab fa-twitter"></i></a>
+                <a herf="#">Instagram<i class="fab fa-instagram"></i></a>
+                <a herf="#">Youtube<i class="fab fa-youtube"></i></a>
+            </div>
+        </section>
+        <section class="product">
+            <div class="p-heading">
+                <h3>Trendy <font>Arri</font>vals</h3>
+            </div>
+            ​<div class="clearfix">
+                <div class="box">
+                    <img src="./Assets/Type21watch.jpg" alt="">
+                    <p>Mens Black Watch with Leather Belt</p>
+                    <a herf="#" class="price">$20</a><br>
+                    <a herf="#" class="buy-btn">Add To Cart</a>
+                </div>
+                <div class="box">
+                    <img src="./Assets/Type11watch.jpg" alt="">
+                    <p>Mens Black Watch with Leather Belt</p>
+                    <a herf="#" class="price">$20</a><br>
+                    <a herf="#" class="buy-btn">Add To Cart</a>
+                </div>
+                <div class="box">
+                    <img src="./Assets/resolution1.jpg" alt="">
+                    <p>Mens Black Watch with Leather Belt</p>
+                    <a herf="#" class="price">$20</a><br>
+                    <a herf="#" class="buy-btn">Add To Cart</a>
+                </div>
+                <div class="box">
+                    <img src="./Assets/resolution2.jpg" alt="">
+                    <p>Mens Black Watch with Leather Belt</p>
+                    <a herf="#" class="price">$20</a><br>
+                    <a herf="#" class="buy-btn">Add To Cart</a>
+                </div>
+              </div>
+              ​<div class="clearfix">
+                <div class="box">
+                    <img src="./Assets/chairecomfort1.jpg" alt="">
+                    <p>Mens Black Watch with Leather Belt</p>
+                    <a herf="#" class="price">$10</a><br>
+                    <a herf="#" class="buy-btn">Add To Cart</a>
+                </div>
+                <div class="box">
+                    <img src="./Assets/chairecomfort2.jpg" alt="">
+                    <p>Mens Black Watch with Leather Belt</p>
+                    <a herf="#" class="price">$25</a><br>
+                    <a herf="#" class="buy-btn">Add To Cart</a>
+                </div>
+                <div class="box">
+                    <img src="./Assets/flat1chair.jpg" alt="">
+                    <p>Mens Black Watch with Leather Belt</p>
+                    <a herf="#" class="price">$10</a><br>
+                    <a herf="#" class="buy-btn">Add To Cart</a>
+                </div>
+                <div class="box">
+                    <img src="./Assets/flat2chair.jpg" alt="">
+                    <p>Mens Black Watch with Leather Belt</p>
+                    <a herf="#" class="price">$23</a><br>
+                    <a herf="#" class="buy-btn">Add To Cart</a>
+                </div>
+              </div>
+        </section>
+    </body>
+</html>
